@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html lang="en">
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .headerContainer {
+            display: flex;
+            flex: 0 1 25%;
+            background-color: rgb(189, 177, 177);
+            padding: 12px;
+        }
+
+        .armchairContainer {
+            width: 100%;
+
+        }
+
+        .armchair {
+            width: 100px;
+        }
+
+        .formik {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .formik-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 40%;
+        }
+
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        form {
+            padding: 20px;
+        }
+
+        form div {
+            margin: 3%;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="headerContainer">
+        <div class="armchairContainer">
+            <img src="https://wallytally.ru/upload/iblock/de1/de1fa37da355f7697215a9ee38accaa6.jpg" alt="img"
+                class="armchair">
+            <p class="armchairDescription">Парикмахерское кресло "Норм" гидравлическое </p>
+            <h1>9990 ₽</h1>
+            <button id='myBtn' class="buyArmchair">Купить</button>
+        </div>
+        <div class="armchairContainer">
+            <img src="https://wallytally.ru/upload/iblock/de1/de1fa37da355f7697215a9ee38accaa6.jpg" alt="img"
+                class="armchair">
+            <p class="armchairDescription">Парикмахерское кресло "Норм" гидравлическое </p>
+            <h1>9990 ₽</h1>
+            <button id='myBtn' class="buyArmchair">Купить</button>
+        </div>
+        <div class="armchairContainer">
+            <img src="https://wallytally.ru/upload/iblock/de1/de1fa37da355f7697215a9ee38accaa6.jpg" alt="img"
+                class="armchair">
+            <p class="armchairDescription">Парикмахерское кресло "Норм" гидравлическое </p>
+            <h1>9990 ₽</h1>
+            <button id='myBtn' class="buyArmchair">Купить</button>
+        </div>
+        <div class="armchairContainer">
+            <img src="https://wallytally.ru/upload/iblock/de1/de1fa37da355f7697215a9ee38accaa6.jpg" alt="img"
+                class="armchair">
+            <p class="armchairDescription">Парикмахерское кресло "Норм" гидравлическое </p>
+            <h1>9990 ₽</h1>
+            <button class="buyArmchair">Купить</button>
+        </div>
+    </div>
+    <div id="myFormik" class="formik">
+
+        <div class="formik-content">
+            <span class="close">&times;</span>
+            <form>
+                <div class="name">
+                    <label>Имя</label>
+                    <input type="text" name="name">
+                </div>
+                <div class="phone">
+                    <label>Телефона</label>
+                    <input type="number" name="phone">
+                </div>
+                <div class="email">
+                    <label>Email</label>
+                    <input type="email" name="email">
+                </div>
+                <div class="itemName">
+                    <label>Название товара</label>
+                    <input type="text" name="item">
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        var modal = document.getElementById("myFormik");
+
+        var btn = document.getElementsByClassName("buyArmchair");
+        for (let i = 0; i < btn.length; i++) {
+            btn[i].onclick = function () {
+                modal.style.display = "block";
+            }
+        }
+        var close = document.getElementsByClassName("close")[0];
+        close.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
